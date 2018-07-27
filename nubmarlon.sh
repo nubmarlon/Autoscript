@@ -159,7 +159,7 @@ gem install lolcat
 # download script
 cd /usr/bin
 wget -O menu "https://cdn.rawgit.com/nubmarlon/Autoscript/2092282e/menu.sh"
-wget -O usernew "https://cdn.rawgit.com/nubmarlon/Autoscript/2092282e/usernew.sh"
+wget -O usernew "https://cdn.rawgit.com/nubmarlon/Autoscript/e856a147/usernew.sh"
 wget -O trial "https://cdn.rawgit.com/nubmarlon/Autoscript/2092282e/trial.sh"
 wget -O delete "https://cdn.rawgit.com/nubmarlon/Autoscript/4805cc9d/delete.sh"
 wget -O check "https://cdn.rawgit.com/nubmarlon/Autoscript/4805cc9d/user-login.sh"
