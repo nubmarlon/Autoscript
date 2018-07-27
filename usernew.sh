@@ -24,6 +24,3 @@ echo -e "On Until: $exp"
 echo -e "=============================" | lolcat
 echo -e "Mod by Nub Marlon"
 echo -e ""
-
-
-
