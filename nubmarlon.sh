@@ -161,7 +161,7 @@ cd /usr/bin
 wget -O menu "https://cdn.rawgit.com/nubmarlon/Autoscript/2092282e/menu.sh"
 wget -O usernew "https://cdn.rawgit.com/nubmarlon/Autoscript/e856a147/usernew.sh"
 wget -O trial "https://cdn.rawgit.com/nubmarlon/Autoscript/2092282e/trial.sh"
-wget -O delete "https://cdn.rawgit.com/nubmarlon/Autoscript/4805cc9d/delete.sh"
+wget -O delete "https://cdn.rawgit.com/nubmarlon/Autoscript/781f83eb/delete.sh"
 wget -O check "https://cdn.rawgit.com/nubmarlon/Autoscript/4805cc9d/user-login.sh"
 wget -O member "https://cdn.rawgit.com/nubmarlon/Autoscript/42f07c70/user-list.sh"
 wget -O restart "https://cdn.rawgit.com/nubmarlon/Autoscript/42f07c70/restart.sh"
@@ -249,4 +249,4 @@ echo "VPS AUTO REBOOT EACH HOUR 12 NIGHTS"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "==========================================="  | tee -a log-install.txt
 cd
-rm -f /root/nubmarlon.sh
+rm nubmarlon.sh
