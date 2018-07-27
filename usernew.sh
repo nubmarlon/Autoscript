@@ -3,17 +3,17 @@
 
 read -p "Username : " Login
 read -p "Password : " Pass
-read -p "Expired (day): " Active period
+read -p "Expired (day): " active period
 
 IP=`dig +short myip.opendns.com @resolver1.opendns.com`
-useradd -e `date -d "$Active period" +"%Y-%m-%d"` -s /bin/false -M $Login
+useradd -e `date -d "$active period days" +"%Y-%m-%d"` -s /bin/false -M $Login
 exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 echo -e ""
-echo -e "====Informasi SSH Account====" | lolcat
+echo -e "====Information SSH Account====" | lolcat
 echo -e "Host: $IP"
 echo -e "Username: $Login "
-echo -e "Password: $Pass" 
+echo -e "Password: $Pass"
 echo -e "Port OpenSSH: 22,444"
 echo -e "Port Dropbear: 143,3128"
 echo -e "Port SSL: 443"
