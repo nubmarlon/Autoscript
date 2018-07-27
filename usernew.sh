@@ -3,10 +3,10 @@
 
 read -p "Username : " Login
 read -p "Password : " Pass
-read -p "Expired (day): " active period
+read -p "Expired (day): " masaaktif
 
 IP=`dig +short myip.opendns.com @resolver1.opendns.com`
-useradd -e `date -d "$active period days" +"%Y-%m-%d"` -s /bin/false -M $Login
+useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
 exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 echo -e ""
@@ -24,3 +24,6 @@ echo -e "On Until: $exp"
 echo -e "=============================" | lolcat
 echo -e "Mod by Nub Marlon"
 echo -e ""
+
+
+
