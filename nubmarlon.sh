@@ -47,6 +47,13 @@ wget -qO - http://www.webmin.com/jcameron-key.asc | apt-key add -
 # update
 apt-get update
 
+# install webmin
+cd
+apt-get -y install webmin
+sudo /usr/share/webmin/changepass.pl /etc/webmin root pogiako
+service webmin restart
+
+
 # install webserver
 apt-get -y install nginx
 
@@ -120,14 +127,8 @@ apt-get -y install squid3
 wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/nubmarlon/Autoscript/master/squid3.conf"
 sed -i $MYIP2 /etc/squid3/squid.conf;
 service squid3 restart
-
-# install webmin
-cd
-apt-get -y install webmin
-sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
-sudo /usr/share/webmin/changepass.pl /etc/webmin root pogiako
-service webmin restart
-
+ 
+ 
 # install stunnel
 apt-get install stunnel4 -y
 cat > /etc/stunnel/stunnel.conf <<-END
