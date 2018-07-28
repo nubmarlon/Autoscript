@@ -79,7 +79,8 @@ service nginx restart
 # install openvpn
 wget -O /etc/openvpn/openvpn.tar "https://github.com/nubmarlon/Autoscript/raw/master/openvpn-debian.tar"
 cd /etc/openvpn/
-tar xf openvpn.tarwget -O /etc/openvpn/1194.conf "https://raw.githubusercontent.com/nubmarlon/Autoscript/master/1194.conf"
+tar xf openvpn.tar
+wget -O /etc/openvpn/1194.conf "https://raw.githubusercontent.com/nubmarlon/Autoscript/master/1194.conf"
 service openvpn restart
 sysctl -w net.ipv4.ip_forward=1
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
