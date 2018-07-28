@@ -37,10 +37,11 @@ sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 service ssh restart
 
 # set repo
+sudo apt-get update && apt-get upgrade -y
 wget -O /etc/apt/sources.list "https://raw.githubusercontent.com/nubmarlon/Autoscript/master/source.list"
 wget "http://www.dotdeb.org/dotdeb.gpg"
 cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
-sh -c 'echo "deb http://download.webmin.com/download/repository sarge contrib" > /etc/apt/sources.list.d/webmin.list'
+sh -c 'echo "deb http://download.webmin.com/download/repository sarge contrib" >> /etc/apt/sources.list'
 wget -qO - http://www.webmin.com/jcameron-key.asc | apt-key add -
 
 # update
@@ -124,6 +125,7 @@ service squid3 restart
 cd
 apt-get -y install webmin
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
+sudo /usr/share/webmin/changepass.pl /etc/webmin root pogiako
 service webmin restart
 
 # install stunnel
@@ -238,6 +240,7 @@ echo ""  | tee -a log-install.txt
 echo "Other features"  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
 echo "Webmin   : http://$MYIP:10000/"  | tee -a log-install.txt
+echo "Webmin User/Pass:root / pogiako  | tee -a log-install.txt
 echo "Timezone : Asia/Philippines (GMT +8)"  | tee -a log-install.txt
 echo "IPv6     : [off]"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
