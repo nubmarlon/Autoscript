@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# 
+# Mod by Nub Marlon
+# ==================================================
+
+# initialization var
+export DEBIAN_FRONTEND=noninteractive
+OS=`uname -m`;
+MYIP=$(wget -qO- ipv4.icanhazip.com);
+MYIP2="s/xxxxxxxxx/$MYIP/g";
+
+
+wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/nubmarlon/Autoscript/master/squid3.conf"
+sed -i $MYIP2 /etc/squid3/squid.conf;
+service squid3 restart
+echo "===========================================" 
