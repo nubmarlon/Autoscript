@@ -15,5 +15,5 @@ TOTAL="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
 echo "-------------------------------" | lolcat
 echo "Account number: $TOTAL user"
 echo "-------------------------------" | lolcat
-echo -e "Mod by Nub Marlon"
+echo -e "Mod by Nub Marlon" | lolcat -a -d 500
 echo -e ""
